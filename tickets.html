@@ -3,12 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Listado de Tickets - Help Desk</title>
+    <title>Listado de Tickets - Help Desk UTM</title>
 </head>
 <body>
     <header>
-        <img src="assets/img/logo.png" alt="Logo de Help Desk UTM">
-        <h1>Tickets Registrados</h1>
+        <h1>Tickets Registrados en la Plataforma</h1>
     </header>
 
     <nav>
@@ -21,40 +20,46 @@
 
     <main>
         <section>
-            <h2>Listado Organizado de Incidentes</h2>
+            <h2>Historial General de Persistencia (PostgreSQL)</h2>
+            <p>Listado de objetos activos gestionados por el componente en memoria centralizado <em>GestorIncidentes</em>.</p>
+            
             <article>
-                <h3>Registro Actual</h3>
+                <h3>Registros de Incidentes de Servidores</h3>
                 <table>
                     <thead>
                         <tr>
                             <th>ID Ticket</th>
-                            <th>Título</th>
-                            <th>Categoría</th>
-                            <th>Prioridad</th>
+                            <th>Fecha Reporte</th>
+                            <th>Clase / Tipo</th>
+                            <th>Descripción</th>
+                            <th>Variables de Especialización</th>
                             <th>Estado</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <td>#001</td>
-                            <td>Fallo de conexión a Internet</td>
-                            <td>Red</td>
-                            <td>Alta</td>
+                            <td>2026-06-01</td>
+                            <td>IncidenteSoftware</td>
+                            <td>Error crítico al levantar contenedor Docker de la Base de Datos.</td>
+                            <td>S.O: Ubuntu Server / SoftwareID: PostgreSQL-15</td>
                             <td>Abierto</td>
                         </tr>
                         <tr>
                             <td>#002</td>
-                            <td>Impresora atascada</td>
-                            <td>Hardware</td>
-                            <td>Media</td>
+                            <td>2026-06-02</td>
+                            <td>IncidenteRed</td>
+                            <td>Caída de la conexión y pérdida de paquetes en la interfaz ethernet.</td>
+                            <td>IP: 10.0.4.15 / Conexión: Fibra Óptica</td>
                             <td>En Proceso</td>
                         </tr>
                         <tr>
                             <td>#003</td>
-                            <td>Error al abrir Word</td>
-                            <td>Software</td>
-                            <td>Baja</td>
-                            <td>Cerrado</td>
+                            <td>2026-06-03</td>
+                            <td>IncidenteHardware</td>
+                            <td>Fallo físico en la fuente de poder redundante del servidor principal.</td>
+                            <td>Rack: Rack B - Fila 3 / Serie: HW-88372</td>
+                            <td>Resuelto</td>
                         </tr>
                     </tbody>
                 </table>
@@ -64,7 +69,7 @@
 
     <footer>
         <p>&copy; 2026 Universidad Técnica de Manabí - Desarrollo de Sistemas Informáticos</p>
-        <p>Contacto: soporte@helpdesk.utm.edu.ec</p>
+        <p>Estudiante: Edison Eduardo García Vásquez - Quinto Semestre (Paralelo A)</p>
     </footer>
 </body>
 </html>

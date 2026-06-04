@@ -3,12 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reportar Incidente - Help Desk</title>
+    <title>Reportar Incidente - Help Desk UTM</title>
 </head>
 <body>
     <header>
-        <img src="assets/img/logo.png" alt="Logo de Help Desk UTM">
-        <h1>Reporte de Nuevo Incidente</h1>
+        <h1>Reportar Nuevo Incidente Técnico</h1>
     </header>
 
     <nav>
@@ -21,47 +20,73 @@
 
     <main>
         <section>
-            <h2>Formulario de Ingreso de Incidentes</h2>
-            <article>
-                <h3>Detalles del Nuevo Incidente</h3>
-                <form action="#" method="POST">
-                    <fieldset>
-                        <legend>Datos del Problema</legend>
-                        
-                        <label for="titulo">Título del incidente:</label><br>
-                        <input type="text" id="titulo" name="titulo" required><br><br>
+            <h2>Formulario de Registro (ControladorIncidentes)</h2>
+            <p>Ingrese los detalles del fallo en los servidores para la posterior fabricación y asignación de la orden de soporte.</p>
 
-                        <label for="categoria">Categoría:</label><br>
-                        <select id="categoria" name="categoria" required>
-                            <option value="">Seleccione una opción...</option>
-                            <option value="red">Red</option>
-                            <option value="hardware">Hardware</option>
-                            <option value="software">Software</option>
-                        </select><br><br>
+            <form action="#" method="post">
+                <div>
+                    <label for="fechaReporte">Fecha de Reporte (fechaReporte):</label>
+                    <input type="date" id="fechaReporte" name="fechaReporte" required>
+                </div>
 
-                        <label>Nivel de prioridad:</label><br>
-                        <input type="radio" id="prioridad_alta" name="prioridad" value="alta" required>
-                        <label for="prioridad_alta">Alta</label><br>
-                        
-                        <input type="radio" id="prioridad_media" name="prioridad" value="media">
-                        <label for="prioridad_media">Media</label><br>
-                        
-                        <input type="radio" id="prioridad_baja" name="prioridad" value="baja">
-                        <label for="prioridad_baja">Baja</label><br><br>
+                <div>
+                    <label for="categoria">Categoría del Incidente (IncidenteFactory):</label>
+                    <select id="categoria" name="categoria" required>
+                        <option value="">-- Seleccione una categoría --</option>
+                        <option value="software">Software (IncidenteSoftware)</option>
+                        <option value="red">Red (IncidenteRed)</option>
+                        <option value="hardware">Hardware (IncidenteHardware)</option>
+                    </select>
+                </div>
 
-                        <label for="descripcion">Descripción detallada:</label><br>
-                        <textarea id="descripcion" name="descripcion" rows="5" cols="40" required></textarea><br><br>
+                <div>
+                    <p>Nivel de Prioridad:</p>
+                    <input type="radio" id="prioridadAlta" name="prioridad" value="Alta" checked>
+                    <label for="prioridadAlta">Alta</label>
 
-                        <button type="submit">Enviar Reporte</button>
-                    </fieldset>
-                </form>
-            </article>
+                    <input type="radio" id="prioridadMedia" name="prioridad" value="Media">
+                    <label for="prioridadMedia">Media</label>
+
+                    <input type="radio" id="prioridadBaja" name="prioridad" value="Baja">
+                    <label for="prioridadBaja">Baja</label>
+                </div>
+
+                <div>
+                    <label for="descripcion">Descripción del Fallo (descripcion):</label>
+                    <br>
+                    <textarea id="descripcion" name="descripcion" rows="4" cols="50" placeholder="Detalle los síntomas del incidente..." required></textarea>
+                </div>
+
+                <fieldset>
+                    <legend>Atributos Técnicos Especializados (UML Clase Hija)</legend>
+                    
+                    <div>
+                        <label for="sistemaOperativo">Sistema Operativo (Solo Software):</label>
+                        <input type="text" id="sistemaOperativo" name="sistemaOperativo" placeholder="Ej. Ubuntu Server 22.04">
+                    </div>
+
+                    <div>
+                        <label for="ipEquipo">IP del Servidor Afectado (Solo Red):</label>
+                        <input type="text" id="ipEquipo" name="ipEquipo" placeholder="Ej. 192.168.10.45">
+                    </div>
+
+                    <div>
+                        <label for="ubicacionRack">Ubicación física del Rack (Solo Hardware):</label>
+                        <input type="text" id="ubicacionRack" name="ubicacionRack" placeholder="Ej. Rack Centro - Fila 4">
+                    </div>
+                </fieldset>
+
+                <div>
+                    <button type="submit">Registrar Incidente</button>
+                    <button type="reset">Limpiar Campos</button>
+                </div>
+            </form>
         </section>
     </main>
 
     <footer>
         <p>&copy; 2026 Universidad Técnica de Manabí - Desarrollo de Sistemas Informáticos</p>
-        <p>Contacto: soporte@helpdesk.utm.edu.ec</p>
+        <p>Estudiante: Edison Eduardo García Vásquez - Quinto Semestre (Paralelo A)</p>
     </footer>
 </body>
 </html>
