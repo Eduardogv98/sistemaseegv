@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Tickets - Help Desk</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Sistema de Gestión Help Desk</h1>
+        <nav>
+            <a href="index.html">Dashboard</a>
+            <a href="reportar.html">Reportar Incidente</a>
+            <a href="tickets.html">Lista de Tickets</a>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h2>Tickets Registrados</h2>
+            <p>Historial global de persistencia de datos (Almacenado en PostgreSQL).</p>
+
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Ticket #</th>
+                            <th>Fecha Reporte</th>
+                            <th>Tipo de Incidente</th>
+                            <th>Descripción</th>
+                            <th>Especialista Asignado</th>
+                            <th>Estado</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>TK-2026-01</td>
+                            <td>2026-05-10</td>
+                            <td>Incidentes Software</td>
+                            <td>Fallo en el contenedor Docker de la Base de Datos PostgreSQL</td>
+                            <td>Administrador de Sistemas</td>
+                            <td><span class="badge alta">Alta</span></td>
+                        </tr>
+                        <tr>
+                            <td>TK-2026-02</td>
+                            <td>2026-05-12</td>
+                            <td>Incidentes Hardware</td>
+                            <td>Fallo físico en la fuente de poder redundante del servidor principal</td>
+                            <td>Especialista Técnico</td>
+                            <td><span class="badge media">Media</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 - Desarrollo de Sistemas Informáticos - 5to Semestre</p>
+    </footer>
+
+</body>
+</html>
